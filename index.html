@@ -3,221 +3,263 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Road & Rulers - Join Our Journey</title>
+    <title>Road & Rulers - Join Our Tech Team</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
-    <script src="components/navbar.js"></script>
-    <script src="components/footer.js"></script>
-    <script src="components/testimonial.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#10b981'
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body class="bg-gray-50">
+<body class="bg-gray-900 text-white font-sans">
     <custom-navbar></custom-navbar>
-
+    
     <!-- Hero Section -->
-    <section class="relative bg-gradient-to-r from-blue-600 to-indigo-800 text-white py-20">
-        <div class="container mx-auto px-6 text-center">
-            <h1 class="text-5xl font-bold mb-6">Pave Your Path with Road & Rulers</h1>
-            <p class="text-xl mb-8 max-w-2xl mx-auto">Join our team of innovators and trailblazers shaping the future of transportation infrastructure.</p>
-            <a href="#apply" class="bg-white text-blue-600 font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 inline-block">Apply Now</a>
+    <section class="relative h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-primary-900 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-[url('https://static.photos/technology/1200x630/5')] bg-cover bg-center opacity-20"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/70 to-gray-900/20"></div>
         </div>
-        <div class="absolute bottom-0 left-0 right-0 h-16 bg-white transform skew-y-1 origin-top-left"></div>
+        <div class="container mx-auto px-6 z-10 text-center">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
+                Pave Your Path with <span class="text-primary-500">Road & Rulers</span>
+            </h1>
+            <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-10 text-gray-300">
+                Join our elite tech team where innovation meets execution. We're building the future - one line of code at a time.
+            </p>
+            <a href="#apply" class="bg-primary-600 hover:bg-primary-700 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-primary-500/30">
+                Apply Now
+            </a>
+        </div>
+        <div class="absolute bottom-10 left-0 right-0 flex justify-center">
+            <a href="#mission" class="animate-bounce">
+                <i data-feather="chevron-down" class="w-10 h-10 text-gray-400"></i>
+            </a>
+        </div>
     </section>
 
-    <!-- Purpose Section -->
-    <section class="py-20 bg-white">
+    <!-- Mission Section -->
+    <section id="mission" class="py-20 bg-gray-800">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Mission</h2>
-                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
-            </div>
-            <div class="grid md:grid-cols-3 gap-10">
-                <div class="text-center p-6 rounded-lg hover:shadow-lg transition duration-300">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i data-feather="compass" class="text-blue-600 w-8 h-8"></i>
+            <h2 class="text-4xl font-bold text-center mb-16">Our Core Values</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Innovate Card -->
+                <div class="bg-gray-700 rounded-xl p-8 transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary-500/20">
+                    <div class="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i data-feather="zap" class="w-8 h-8"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Innovate</h3>
-                    <p class="text-gray-600">Developing cutting-edge solutions for modern transportation challenges.</p>
+                    <h3 class="text-2xl font-bold text-center mb-4 text-primary-400">Innovate</h3>
+                    <p class="text-gray-300 text-center">
+                        We push boundaries and challenge the status quo. Every team member is encouraged to bring bold ideas to the table.
+                    </p>
                 </div>
-                <div class="text-center p-6 rounded-lg hover:shadow-lg transition duration-300">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i data-feather="users" class="text-blue-600 w-8 h-8"></i>
+                
+                <!-- Collaborate Card -->
+                <div class="bg-gray-700 rounded-xl p-8 transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-secondary-500/20">
+                    <div class="w-16 h-16 bg-secondary-600 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i data-feather="users" class="w-8 h-8"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Collaborate</h3>
-                    <p class="text-gray-600">Working together with communities to build sustainable infrastructure.</p>
+                    <h3 class="text-2xl font-bold text-center mb-4 text-secondary-400">Collaborate</h3>
+                    <p class="text-gray-300 text-center">
+                        Great things are never done alone. We work together across disciplines to create solutions greater than the sum of their parts.
+                    </p>
                 </div>
-                <div class="text-center p-6 rounded-lg hover:shadow-lg transition duration-300">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i data-feather="trending-up" class="text-blue-600 w-8 h-8"></i>
+                
+                <!-- Elevate Card -->
+                <div class="bg-gray-700 rounded-xl p-8 transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary-500/20">
+                    <div class="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i data-feather="trending-up" class="w-8 h-8"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Elevate</h3>
-                    <p class="text-gray-600">Raising standards in transportation planning and execution.</p>
+                    <h3 class="text-2xl font-bold text-center mb-4 text-primary-400">Elevate</h3>
+                    <p class="text-gray-300 text-center">
+                        We're committed to continuous growth - for our products, our company, and most importantly, our people.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Requirements Section -->
-    <section class="py-20 bg-gray-100">
+    <section class="py-20 bg-gray-900">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">What We Look For</h2>
-                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
-
-                <div class="mb-8 p-6 bg-white rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold mb-3 flex items-center">
-                        <span class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center mr-3">1</span>
-                        Soft Skills
+            <h2 class="text-4xl font-bold text-center mb-16">What We Look For</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="mb-12">
+                    <h3 class="text-2xl font-bold mb-4 text-primary-400 flex items-center">
+                        <i data-feather="code" class="mr-3"></i> Technical Excellence
                     </h3>
-                    <p class="text-gray-600">Strong communication, teamwork, and problem-solving abilities.</p>
+                    <p class="text-gray-300 mb-4">
+                        We seek engineers who write clean, efficient code and have a deep understanding of their craft. Experience with modern frameworks and architectures is a must.
+                    </p>
+                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <li class="flex items-center">
+                            <i data-feather="check" class="text-secondary-500 mr-2"></i>
+                            <span>Proficiency in multiple programming languages</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check" class="text-secondary-500 mr-2"></i>
+                            <span>Experience with cloud platforms (AWS, GCP, Azure)</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check" class="text-secondary-500 mr-2"></i>
+                            <span>Strong understanding of data structures/algorithms</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check" class="text-secondary-500 mr-2"></i>
+                            <span>Knowledge of CI/CD pipelines</span>
+                        </li>
+                    </ul>
                 </div>
-                <div class="p-6 bg-white rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold mb-3 flex items-center">
-                        <span class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center mr-3">2</span>
-                        Passion
+                
+                <div class="mb-12">
+                    <h3 class="text-2xl font-bold mb-4 text-primary-400 flex items-center">
+                        <i data-feather="heart" class="mr-3"></i> Passion & Drive
                     </h3>
-                    <p class="text-gray-600">Genuine enthusiasm for improving transportation systems and community infrastructure.</p>
+                    <p class="text-gray-300 mb-4">
+                        Technical skills are important, but we value passion and curiosity even more. We want team members who are excited to learn and grow with us.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-primary-400 flex items-center">
+                        <i data-feather="message-square" class="mr-3"></i> Communication
+                    </h3>
+                    <p class="text-gray-300">
+                        The ability to articulate complex ideas clearly and collaborate effectively is crucial in our fast-paced environment.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="py-20 bg-white">
-            <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">Team Voices</h2>
-                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <custom-testimonial 
-                    name="Bishal Sinha" 
-                    role="Team Leader" 
-                    image="http://static.photos/people/200x200/1"
-                    quote="Joining Road & Rulers transformed my career. The collaborative environment and challenging projects keep me engaged every day.">
-                </custom-testimonial>
+    <section class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16">Team Voices</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-gray-700 rounded-xl p-8 relative">
+                    <div class="absolute -top-6 -left-6 w-12 h-12 bg-primary-600 rounded-full flex items-center justify-center">
+                        <i data-feather="user" class="w-6 h-6"></i>
+                    </div>
+                    <p class="text-gray-300 italic mb-6">
+                        At Road & Rulers, we grow together — we learn, we innovate, and we uplift every member.If you’re ready to work with passion and push your limits, welcome to the team.
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-gray-600 mr-4 overflow-hidden">
+                            <img src="https://static.photos/people/200x200/1" alt="Team member" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Bishal Sinha</h4>
+                            <p class="text-sm text-gray-400">Team Leader</p>
+                        </div>
+                    </div>
+                </div>
                 
-                <custom-testimonial 
-                    name="Souvik Ghosh(DJ)" 
-                    role="Project Manager" 
-                    image="http://static.photos/people/200x200/3"
-                    quote="Professional growth is constant here. The team supports each other while pushing boundaries in our field.">
-                </custom-testimonial>
+                <!-- Testimonial 2 -->
+                <div class="bg-gray-700 rounded-xl p-8 relative">
+                    <div class="absolute -top-6 -left-6 w-12 h-12 bg-secondary-600 rounded-full flex items-center justify-center">
+                        <i data-feather="user" class="w-6 h-6"></i>
+                    </div>
+                    <p class="text-gray-300 italic mb-6">
+                        "The culture of innovation here is incredible. I'm constantly learning from brilliant colleagues who push me to be better."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-gray-600 mr-4 overflow-hidden">
+                            <img src="https://static.photos/people/200x200/2" alt="Team member" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Souvik Ghosh</h4>
+                            <p class="text-sm text-gray-400">Product Manager</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Application Form Section -->
-    <section id="apply" class="py-20 bg-gray-100">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
-                <div class="md:flex">
-                    <div class="md:w-1/2 bg-blue-600 text-white p-10 flex flex-col justify-center">
-                        <h2 class="text-3xl font-bold mb-4">Ready to Join Us?</h2>
-                        <p class="mb-6">Complete this form to start your journey with Road & Rulers. We review applications weekly and will contact qualified candidates within 10 business days.</p>
-                        <div class="flex items-center">
-                            <i data-feather="mail" class="mr-2"></i>
-                            <span>roadrulers360@gmail.com</span>
-                        </div>
+    <!-- Application Form -->
+    <section id="apply" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h2 class="text-4xl font-bold text-center mb-6">Join Our Team</h2>
+            <p class="text-xl text-center text-gray-300 mb-12">
+                Ready to pave your path with us? Fill out the form below and we'll get back to you soon.
+            </p>
+            <form id="applicationForm"
+      action="https://formsubmit.co/roadrulers360@gmail.com"
+      method="POST"
+      enctype="multipart/form-data"
+      class="bg-gray-800 rounded-xl p-8 shadow-xl">
+            
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label for="name" class="block text-gray-300 mb-2">Full Name</label>
+                        <input type="text" id="name" name="name" required class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
                     </div>
-                    <div class="md:w-1/2 p-10">
-                        <form id="applicationForm" class="space-y-6">
-                            <div>
-                                <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
-                                <input type="text" id="name" name="name" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
-                            </div>
-                            <div>
-                                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                                <input type="email" id="email" name="email" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
-                            </div>
-                            <div>
-                                <label for="phone" class="block text-sm font-medium text-gray-700">Phone</label>
-                                <input type="tel" id="phone" name="phone" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
-                            </div>
-                            
-                            <div>
-                                <label for="message" class="block text-sm font-medium text-gray-700">Cover Letter/Message</label>
-                                <textarea id="message" name="message" rows="4" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500"></textarea>
-                            </div>
-                            <div>
-                                <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                                    Submit Application
-                                </button>
-                            </div>
-                        </form>
+                    <div>
+                        <label for="email" class="block text-gray-300 mb-2">Email</label>
+                        <input type="email" id="email" name="email" required class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
                     </div>
                 </div>
-            </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label for="phone" class="block text-gray-300 mb-2">Phone</label>
+                        <input type="tel" id="phone" name="phone" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                    </div>
+                   
+                </div>
+                
+                <div class="mb-6">
+                    <label for="message" class="block text-gray-300 mb-2">Why do you want to join Road & Rulers?</label>
+                    <textarea id="message" name="message" rows="5" required class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"></textarea>
+                </div>
+                
+                
+                <button type="submit" class="w-full bg-primary-600 hover:bg-primary-700 text-white font-bold py-4 px-6 rounded-lg transition-all duration-300 transform hover:scale-[1.02] shadow-lg shadow-primary-500/20">
+                    Submit Application
+                </button>
+            </form>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="py-20 bg-white">
+    <section class="py-20 bg-gray-800">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">Get In Touch</h2>
-                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
-            </div>
-            <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-10">
-                <div>
-                    <h3 class="text-xl font-semibold mb-4">Our Office</h3>
-                    <address class="not-italic text-gray-600 space-y-4">
-                        <p class="flex items-center">
-                            <i data-feather="map-pin" class="mr-2 text-blue-600"></i>
-                            Electrical Building 2nd Floor,Adisaptagram Hooghly-712121 West Bengal, India
-                        </p>
-                        <p class="flex items-center">
-                            <i data-feather="phone" class="mr-2 text-blue-600"></i>
-                            9831637462 Or 8768937895
-                        </p>
-                        <p class="flex items-center">
-                            <i data-feather="mail" class="mr-2 text-blue-600"></i>
-                            roadrulers360@gmail.com
-                        </p>
-                    </address>
-                    <div class="mt-8">
-                        <h3 class="text-xl font-semibold mb-4">Connect With Us</h3>
-                        <div class="flex space-x-4">
-                            <a href="#" class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-200 transition duration-300">
-                                <i data-feather="linkedin"></i>
-                            </a>
-                            <a href="#" class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-200 transition duration-300">
-                                <i data-feather="twitter"></i>
-                            </a>
-                            <a href="#" class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-200 transition duration-300">
-                                <i data-feather="facebook"></i>
-                            </a>
-                            <a href="#" class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-200 transition duration-300">
-                                <i data-feather="instagram"></i>
-                            </a>
-                        </div>
+            <h2 class="text-4xl font-bold text-center mb-16">Get In Touch</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i data-feather="map-pin" class="w-8 h-8"></i>
                     </div>
+                    <h3 class="text-xl font-bold mb-2">Address</h3>
+                    <p class="text-gray-300">EE 1st Floor,Adisaptagram<br>Aedconagar,Hooghly-712121 West Bengal, India</p>
                 </div>
-                <div>
-                    <form class="space-y-6">
-                        <div>
-                            <label for="contact-name" class="block text-sm font-medium text-gray-700">Name</label>
-                            <input type="text" id="contact-name" name="contact-name" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
-                        </div>
-                        <div>
-                            <label for="contact-email" class="block text-sm font-medium text-gray-700">Email</label>
-                            <input type="email" id="contact-email" name="contact-email" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
-                        </div>
-                        <div>
-                            <label for="contact-subject" class="block text-sm font-medium text-gray-700">Subject</label>
-                            <input type="text" id="contact-subject" name="contact-subject" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
-                        </div>
-                        <div>
-                            <label for="contact-message" class="block text-sm font-medium text-gray-700">Message</label>
-                            <textarea id="contact-message" name="contact-message" rows="4" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500"></textarea>
-                        </div>
-                        <div>
-                            <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                                Send Message
-                            </button>
-                        </div>
-                    </form>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-secondary-600 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i data-feather="phone" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Phone</h3>
+                    <p class="text-gray-300">+91 9831637462</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i data-feather="mail" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Email</h3>
+                    <p class="text-gray-300">roadrulers360@gmail.com</p>
                 </div>
             </div>
         </div>
@@ -225,15 +267,32 @@
 
     <custom-footer></custom-footer>
 
+    <!-- Success Modal -->
+    <div id="successModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden">
+        <div class="bg-gray-800 rounded-xl p-8 max-w-md mx-4 relative">
+            <button id="closeModal" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+                <i data-feather="x" class="w-6 h-6"></i>
+            </button>
+            <div class="text-center">
+                <div class="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mb-6 mx-auto">
+                    <i data-feather="check" class="w-10 h-10"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Application Submitted!</h3>
+                <p class="text-gray-300 mb-6">
+                    Thank you for your interest in Road & Rulers. We've received your application and will review it shortly.
+                </p>
+                <button id="modalOk" class="bg-primary-600 hover:bg-primary-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300">
+                    OK
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
     <script>
         feather.replace();
-        document.getElementById('applicationForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your application! We will review your information and get back to you soon.');
-            this.reset();
-        });
     </script>
-    <script src="script.js"></script>
 </body>
-
 </html>

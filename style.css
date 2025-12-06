@@ -95,3 +95,39 @@ body {
     padding: 4px;
   }
 }
+/* ----------------------------------------
+   Animated Gradient Background (Global)
+-----------------------------------------*/
+.animated-bg {
+  background: linear-gradient(120deg, #0f172a, #1e3a8a, #6d28d9, #0ea5e9);
+  background-size: 300% 300%;
+  animation: bgMove 12s ease infinite;
+}
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ----------------------------------------
+   Floating Particle Dots
+-----------------------------------------*/
+.particle {
+  position: fixed;
+  border-radius: 50%;
+  background: rgba(0,150,255,0.5);
+  width: 6px;
+  height: 6px;
+  animation: floatParticle 6s ease-in-out infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes floatParticle {
+  0% { transform: translateY(0) scale(1); opacity: 0.5; }
+  50% { transform: translateY(-25px) scale(1.4); opacity: 1; }
+  100% { transform: translateY(0) scale(1); opacity: 0.5; }
+}
+
+

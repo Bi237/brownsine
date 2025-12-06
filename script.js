@@ -1,59 +1,169 @@
-// Main JavaScript functionality
-document.addEventListener('DOMContentLoaded', function() {
-    // Smooth scrolling for anchor links
+// =============================
+// MAIN SCRIPT FOR WEBSITE
+// (Smooth Scroll + FormSubmit + Modal + Scroll Anim + Car Cursor)
+// =============================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    /* ------------------------------------------
+       1) Smooth Scrolling for internal links
+    -------------------------------------------*/
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
+        anchor.addEventListener('click', function (e) {
             const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
+            if (!targetId || targetId === "#") return;
+
             const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-            }
+            if (!targetElement) return;
+
+            e.preventDefault();
+            window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: 'smooth'
+            });
         });
     });
 
-    // Form submission handling
-    const contactForm = document.querySelector('section:last-of-type form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<span class="flex items-center justify-center"><svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Sending...</span>';
-            
-            // Simulate form submission
-            setTimeout(() => {
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Message Sent!';
-                this.reset();
-                
-                setTimeout(() => {
-                    submitBtn.textContent = originalText;
-                }, 2000);
-            }, 1500);
+    /* ------------------------------------------
+       2) FormSubmit.co + Success Modal
+    -------------------------------------------*/
+
+    const form = document.getElementById("applicationForm");
+    const modal = document.getElementById("successModal");
+    const closeModal = document.getElementById("closeModal");
+    const modalOk = document.getElementById("modalOk");
+
+    if (form) {
+        form.addEventListener("submit", function (e) {
+            e.preventDefault(); // prevent redirect
+
+            const btn = form.querySelector('button[type="submit"]');
+            btn.disabled = true;
+            btn.textContent = "Submitting...";
+
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+                method: "POST",
+                body: formData
+            })
+                .then(() => {
+                    form.reset();
+                    modal.classList.remove("hidden"); // show modal
+                })
+                .catch(() => {
+                    alert("Something went wrong!");
+                })
+                .finally(() => {
+                    btn.disabled = false;
+                    btn.textContent = "Submit Application";
+                });
         });
     }
 
-    // Animate elements when they come into view
+    if (closeModal) {
+        closeModal.addEventListener("click", () => {
+            modal.classList.add("hidden");
+        });
+    }
+    if (modalOk) {
+        modalOk.addEventListener("click", () => {
+            modal.classList.add("hidden");
+        });
+    }
+
+    /* ------------------------------------------
+       3) Animate elements on scroll 
+    -------------------------------------------*/
+
     const animateOnScroll = () => {
         const elements = document.querySelectorAll('.animate-on-scroll');
+        const screenHeight = window.innerHeight / 1.2;
+
         elements.forEach(element => {
-            const elementPosition = element.getBoundingClientRect().top;
-            const screenPosition = window.innerHeight / 1.2;
-            
-            if (elementPosition < screenPosition) {
+            const elementTop = element.getBoundingClientRect().top;
+            if (elementTop < screenHeight) {
                 element.classList.add('animate-fade-in');
             }
         });
     };
 
     window.addEventListener('scroll', animateOnScroll);
-    animateOnScroll(); // Run once on page load
-});
+    animateOnScroll();
+
+}); // END DOMContentLoaded
+
+
+
+// ===================================================
+// 4) CUSTOM CAR CURSOR (🚗)
+// ===================================================
+
+(function () {
+
+    // Disable cursor on mobile devices (touch screens)
+    if (!("onmousemove" in window) || ("ontouchstart" in window)) return;
+
+    // Hide original cursor
+    document.body.classList.add("custom-cursor-enabled");
+
+    // Create car cursor element
+    const cursor = document.createElement("div");
+    cursor.id = "custom-car-cursor";
+    cursor.innerText = "🚗";
+    document.body.appendChild(cursor);
+
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let posX = mouseX;
+    let posY = mouseY;
+
+    let shown = false;
+    window.addEventListener("mousemove", (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+
+        if (!shown) {
+            cursor.style.opacity = "1";
+            shown = true;
+        }
+    });
+
+    function lerp(a, b, n) {
+        return (1 - n) * a + n * b;
+    }
+
+    function animateCursor() {
+        posX = lerp(posX, mouseX, 0.18);
+        posY = lerp(posY, mouseY, 0.18);
+
+        const dx = mouseX - posX;
+        const rot = Math.max(-15, Math.min(15, dx * 0.25));
+
+        cursor.style.transform =
+            `translate(${posX}px, ${posY}px) translate(-50%, -50%) rotate(${rot}deg)`;
+
+        requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+
+    // Hover animation on links/buttons
+    const interactiveItems = "a, button, input[type='submit'], .nav-link";
+
+    function addHoverListeners() {
+        document.querySelectorAll(interactiveItems).forEach(el => {
+            el.addEventListener("pointerenter", () => cursor.classList.add("link-hover"));
+            el.addEventListener("pointerleave", () => cursor.classList.remove("link-hover"));
+        });
+    }
+    addHoverListeners();
+
+    // Observe dynamic DOM changes
+    const observer = new MutationObserver(addHoverListeners);
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    // Click animation
+    window.addEventListener("mousedown", () => cursor.classList.add("cursor-active"));
+    window.addEventListener("mouseup", () => cursor.classList.remove("cursor-active"));
+
+})();
